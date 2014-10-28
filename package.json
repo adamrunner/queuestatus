@@ -1,0 +1,31 @@
+{
+  "name": "queue-status",
+  "description": "Zendesk Voice Queue Status",
+  "author": "Adam Runner",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "start": "brunch watch --server",
+    "test": "brunch test"
+  },
+  "dependencies": {
+    "auto-reload-brunch": ">= 1.0 < 1.8",
+    "body-parser": "^1.9.1",
+    "clean-css-brunch": ">= 1.0 < 1.8",
+    "css-brunch": ">= 1.0 < 1.8",
+    "ember-handlebars-brunch": "^1.2.0",
+    "errorhandler": "^1.2.2",
+    "express": "^4.10.0",
+    "express-json": "^1.0.0",
+    "javascript-brunch": ">= 1.0 < 1.8",
+    "less": "^1.7.5",
+    "less-brunch": "^1.7.2",
+    "method-override": "^2.3.0",
+    "morgan": "^1.4.1",
+    "uglify-js-brunch": ">= 1.0 < 1.8",
+    "zendesk-api-client": "git://github.com/adamrunner/zendesk-api-client"
+  }
+}

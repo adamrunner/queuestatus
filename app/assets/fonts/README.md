@@ -1,0 +1,1 @@
+Note: if you want to make these files a little more dynamic you can change the firm references to these files into symbolic links to the appropriately named file in the `../../../bower_components/bootstrap/fonts/` directory. This should ensure that Bower updates to Bootstrap that effect the Glyphicons (not very likely) will automatically get incorporated into your application.

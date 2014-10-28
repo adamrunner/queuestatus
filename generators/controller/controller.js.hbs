@@ -1,0 +1,12 @@
+/*jslint browser: true, jquery: true */ 
+/*global App: true, require: false, Ember: false, module: false*/
+App = require("app");
+
+module.exports = App.{{#camelize}}{{name}}{{/camelize}}Controller = Ember.ObjectController.extend({
+
+	// Actions Handler
+	actions: {
+	
+	}
+
+});

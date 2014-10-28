@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "from": "component.js.hbs",
+      "to": "app/components/{{#camelize}}{{name}}{{/camelize}}Component.js"
+    }
+  ],
+  "dependencies": []
+}

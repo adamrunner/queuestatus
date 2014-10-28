@@ -1,0 +1,55 @@
+{{!-- Handlebars template for index --}}
+<table>
+  <tr>
+    <th>Calls Waiting</th>
+    <th>Average Wait Time</th>
+    <th>Longest Wait Time</th>
+  </tr>
+    <tr>
+      <td>{{current_queue_activity.calls_waiting}}</td>
+      <td>{{current_queue_activity.average_wait_time}}</td>
+      <td>{{current_queue_activity.longest_wait_time}}</td>
+    </tr>
+
+</table>
+
+<table>
+  <tr>
+    <th>Available</th>
+    <th>Wrap Up</th>
+    <th>In Call</th>
+    <th>Not Available</th>
+  </tr>
+  {{#each agent in available}}
+    <tr>
+      <td>{{agent.name}}</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  {{/each}}
+  {{#each agent in wrapUp}}
+    <tr>
+      <td></td>
+      <td>{{agent.name}}</td>
+      <td></td>
+      <td></td>
+    </tr>
+  {{/each}}
+  {{#each agent in inCall}}
+    <tr>
+      <td></td>
+      <td></td>
+      <td>{{agent.name}}</td>
+      <td></td>
+    </tr>
+  {{/each}}
+  {{#each agent in notAvailable}}
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>{{agent.name}}</td>
+    </tr>
+  {{/each}}
+</table>

@@ -1,0 +1,10 @@
+/*jslint browser: true, jquery: true */ 
+/*global App: true, require: false, App: false, module: false*/
+App = require("app");
+
+module.exports = App.{{#camelize}}{{name}}{{/camelize}}.FIXTURES = [
+	{
+		"id":1,
+		"foo","bar"
+	}
+];

@@ -1,0 +1,19 @@
+/*jslint browser: true, jquery: true */ 
+/*global App: true, require: false, Ember: false, module: false*/
+App = require("app");
+
+module.exports = App.{{#camelize}}{{name}}{{/camelize}}Route = Ember.Route.extend({
+  
+	model: function(params) {
+		return this.store.find('{{name}}',params.id);
+		// if creating a new record use something like: 
+		return this.store.createRecord('{{name}}');
+		// example is for an object controller; for an array controller just remove the parameter '{{name}}' from createRecord()
+	}, 
+		
+	// Action Handlers
+	actions: {
+	
+	}
+  
+});

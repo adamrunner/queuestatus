@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "from": "object.js.hbs",
+      "to": "app/objects/{{#camelize}}{{name}}{{/camelize}}.js"
+    }
+  ],
+  "dependencies": []
+}
