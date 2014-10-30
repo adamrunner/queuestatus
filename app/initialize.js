@@ -20,11 +20,13 @@ folderOrder.forEach(function(folder) {
     require(module);
   });
 })
-
+Ember.$.getJSON('http://localhost:3333/api/v2/users.json?role=agent').then(function(json_object){
+  App.Users = json_object.users;
+});
 App.Pollster = Ember.Object.extend({
   interval: function() {
     // return 2500000; // Time between polls (in ms)
-    return 45000;
+    return 4500;
   }.property().readOnly(),
 
   // Schedules the function `f` to be executed every `interval` time.

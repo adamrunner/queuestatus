@@ -12,6 +12,7 @@ exports.config =
           'bower_components/handlebars/handlebars.js'
           'bower_components/ember/ember.js'
           'bower_components/lodash/dist/lodash.js'
+          'bower_components/momentjs/moment.js'
         ]
     stylesheets:
       joinTo: './stylesheets/app.css': /^(app|vendor|bower_components)/

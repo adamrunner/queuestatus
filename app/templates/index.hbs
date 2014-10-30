@@ -1,55 +1,70 @@
 {{!-- Handlebars template for index --}}
-<table>
-  <tr>
-    <th>Calls Waiting</th>
-    <th>Average Wait Time</th>
-    <th>Longest Wait Time</th>
-  </tr>
-    <tr>
-      <td>{{current_queue_activity.calls_waiting}}</td>
-      <td>{{current_queue_activity.average_wait_time}}</td>
-      <td>{{current_queue_activity.longest_wait_time}}</td>
-    </tr>
-
-</table>
-
-<table>
-  <tr>
-    <th>Available</th>
-    <th>Wrap Up</th>
-    <th>In Call</th>
-    <th>Not Available</th>
-  </tr>
-  {{#each agent in available}}
-    <tr>
-      <td>{{agent.name}}</td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 class="panel-title">Calls Waiting</h2>
+      </div>
+      <div class="panel-body">
+        <h2>{{current_queue_activity.calls_waiting}}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 class="panel-title">Average Wait Time</h2>
+      </div>
+      <div class="panel-body">
+        <h2>{{toMinutes current_queue_activity.average_wait_time}}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 class="panel-title">Longest Wait Time</h2>
+      </div>
+      <div class="panel-body">
+        <h2>{{toMinutes current_queue_activity.longest_wait_time}}</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row hidden">
+  <div class="col-md-3">
+    <h2>Available</h2>
+    {{#each agent in available}}
+        <p>{{agent.name}}</p>
+    {{/each}}
+  </div>
+  <div class="col-md-3">
+    <h2>Wrap Up</h2>
+    {{#each agent in wrapUp}}
+        <p>{{agent.name}}</p>
+    {{/each}}
+  </div>
+  <div class="col-md-3">
+    <h2>In Call</h2>
+    {{#each agent in onCall}}
+        <p>{{agent.name}}</p>
+    {{/each}}
+  </div>
+  <div class="col-md-3">
+    <h2>Not Available</h2>
+    {{#each agent in notAvailable}}
+      <p>{{agent.name}}</p>
+    {{/each}}
+  </div>
+</div>
+<div class="row">
+  {{#each row in chartValues}}
+    <p>
+      {{row.key}}
+      {{row.value.length}}
+    </p>
   {{/each}}
-  {{#each agent in wrapUp}}
-    <tr>
-      <td></td>
-      <td>{{agent.name}}</td>
-      <td></td>
-      <td></td>
-    </tr>
-  {{/each}}
-  {{#each agent in inCall}}
-    <tr>
-      <td></td>
-      <td></td>
-      <td>{{agent.name}}</td>
-      <td></td>
-    </tr>
-  {{/each}}
-  {{#each agent in notAvailable}}
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>{{agent.name}}</td>
-    </tr>
-  {{/each}}
-</table>
+</div>
+<div class="row">
+  {{view 'chart' contentBinding="controller.chartValues"}}
+</div>
