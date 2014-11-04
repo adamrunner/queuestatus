@@ -1,6 +1,6 @@
 App = Ember.Application.create({
-  LOG_TRANSITIONS: true, // basic logging of successful transitions
-  LOG_TRANSITIONS_INTERNAL: true, // detailed logging of all routing steps
+  LOG_TRANSITIONS: true,
+  LOG_TRANSITIONS_INTERNAL: true,
   LOG_STACKTRACE_ON_DEPRECATION : true,
   LOG_BINDINGS                  : true,
   LOG_VIEW_LOOKUPS              : true,
@@ -16,7 +16,6 @@ folderOrder.forEach(function(folder) {
   window.require.list().filter(function(module) {
     return new RegExp("^" + folder + "/").test(module);
   }).forEach(function(module) {
-    // console.log("Loading Module: " + module);
     require(module);
   });
 })
@@ -26,8 +25,11 @@ Ember.$.getJSON('/api/v2/users.json?role=agent').then(function(json_object){
 });
 App.Pollster = Ember.Object.extend({
   interval: function() {
-    // return 2500000; // Time between polls (in ms)
-    return 450000;
+    if(undefined === App.RefreshInterval){
+      return 4000;
+    }else{
+      return parseInt(App.RefreshInterval, 10);
+    }
   }.property().readOnly(),
 
   // Schedules the function `f` to be executed every `interval` time.
