@@ -53,5 +53,3 @@ app.get(/api.+/, function(req, res){
 app.listen(port, function() {
   // return console.log('Express server listening on port ' + port);
 });
-console.log('Environment Vars');
-console.log(process.env);
