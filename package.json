@@ -10,7 +10,7 @@
   "scripts": {
     "start": "brunch watch --server",
     "test": "brunch test",
-    "postinstall": "brunch build --optimize"
+    "postinstall": "brunch build --production"
   },
   "dependencies": {
     "auto-reload-brunch": ">= 1.0 < 1.8",
