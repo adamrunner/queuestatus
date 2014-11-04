@@ -12,7 +12,6 @@ var client           = new ZendeskApiClient({
   username : process.env.ZENDESK_USERNAME,
   apiToken : process.env.ZENDESK_API_KEY
 });
-console.log('Zendesk Hostname' + process.env.ZENDESK_HOSTNAME)
 var app = express();
 var port = process.env.PORT || 3333
 app.use(morgan('dev'));
@@ -52,5 +51,7 @@ app.get(/api.+/, function(req, res){
   })
 });
 app.listen(port, function() {
-  return console.log('Express server listening on port ' + port);
+  // return console.log('Express server listening on port ' + port);
 });
+console.log('Environment Vars');
+console.log(process.env);
