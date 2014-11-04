@@ -13,7 +13,7 @@
     "postinstall": "brunch build --production"
   },
   "dependencies": {
-    "auto-reload-brunch": ">= 1.0 < 1.8",
+    "bower" : "^1.3.12",
     "body-parser": "^1.9.1",
     "clean-css-brunch": ">= 1.0 < 1.8",
     "css-brunch": ">= 1.0 < 1.8",
@@ -28,5 +28,8 @@
     "morgan": "^1.4.1",
     "uglify-js-brunch": ">= 1.0 < 1.8",
     "zendesk-api-client": "git://github.com/adamrunner/zendesk-api-client"
+  },
+  "devDependencies" : {
+    "auto-reload-brunch": ">= 1.0 < 1.8"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "your-app",
+  "name": "queue-status",
   "version": "0.0.1",
   "main": "public/app.js",
   "dependencies": {
