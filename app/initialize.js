@@ -27,7 +27,7 @@ Ember.$.getJSON('/api/v2/users.json?role=agent').then(function(json_object){
 App.Pollster = Ember.Object.extend({
   interval: function() {
     // return 2500000; // Time between polls (in ms)
-    return 4500;
+    return 450000;
   }.property().readOnly(),
 
   // Schedules the function `f` to be executed every `interval` time.

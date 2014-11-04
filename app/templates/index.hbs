@@ -1,5 +1,28 @@
 {{!-- Handlebars template for index --}}
-<div class="row">
+<div class="row call-status-row">
+  <div class="col-md-4">
+      <i class="fa fa-phone pull-left fa-5x fa-rotate-90"></i>
+      <div class="pull-left">
+        <h1>Calls Waiting</h1>
+        <h1>{{current_queue_activity.calls_waiting}}</h1>
+      </div>
+  </div>
+  <div class="col-md-4">
+    <i class="fa fa-clock-o pull-left fa-5x fa-rotate-90"></i>
+    <div class="pull-left">
+      <h1>Average Wait Time</h1>
+      <h1>{{toMinutes current_queue_activity.average_wait_time}}</h1>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <i class="fa fa-clock-o pull-left fa-5x"></i>
+    <div class="pull-left">
+      <h1>Longest Wait Time</h1>
+      <h1>{{toMinutes current_queue_activity.longest_wait_time}}</h1>
+    </div>
+  </div>
+</div>
+<div class="row hidden">
   <div class="col-md-4">
     <div class="panel panel-default">
       <div class="panel-heading">
