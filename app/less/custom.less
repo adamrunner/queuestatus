@@ -1,0 +1,52 @@
+g, path, line, text {
+  shape-rendering: crispEdges;
+}
+path { fill: none; }
+path { stroke: black;}
+line { stroke:black; }
+.bar {
+
+}
+text {
+  font-size: 2.3em;
+  fill: rgb(21,21,21);
+}
+@white: rgb(250,250,250);
+@available-color: #4fa521;
+@wrap-up-color: #31708f;
+@on-call-color: #ffe75b;
+@not-available-color: #5b5b5b;
+.available {
+  text {
+    fill:@white;
+  }
+  fill: @available-color;
+
+  &:hover{
+    fill: lighten(@available-color, 10%);
+  }
+}
+.wrapUp {
+  text {
+    fill:@white;
+  }
+  fill: @wrap-up-color;
+  &:hover{
+    fill: lighten(@wrap-up-color, 10%);
+  }
+}
+.onCall {
+  fill:@on-call-color;
+  &:hover{
+    fill: lighten(@on-call-color, 10%);
+  }
+}
+.notAvailable{
+  text {
+    fill:@white;
+  }
+  fill:@not-available-color;
+  &:hover{
+    fill: lighten(@not-available-color, 10%)
+  }
+}

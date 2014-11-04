@@ -9,19 +9,20 @@ App = Ember.Application.create({
 
 require('store');
 require('router');
-
+require('chart');
 var folderOrder = [ 'routes', 'models', 'views', 'controllers', 'helpers', 'templates', 'components' ];
 
 folderOrder.forEach(function(folder) {
   window.require.list().filter(function(module) {
     return new RegExp("^" + folder + "/").test(module);
   }).forEach(function(module) {
-    console.log("Loading Module: " + module);
+    // console.log("Loading Module: " + module);
     require(module);
   });
 })
-Ember.$.getJSON('http://localhost:3333/api/v2/users.json?role=agent').then(function(json_object){
+Ember.$.getJSON('/api/v2/users.json?role=agent').then(function(json_object){
   App.Users = json_object.users;
+  App.AgentIds = _.map(json_object.users, function(u){ return u.id});
 });
 App.Pollster = Ember.Object.extend({
   interval: function() {

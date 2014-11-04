@@ -26,10 +26,13 @@ App.IndexRoute = Ember.Route.extend({
           });
           var agents = '';
           Ember.$.getJSON('/api/v2/channels/voice/stats/agents_activity.json').then(function(json_object){
-            agents = _.each(json_object.agents_activity, function(object, index){
-              object.id = index + 1;
+            agents = _.map(json_object.agents_activity, function(object, index){
+              if(_.contains(App.AgentIds, object.agent_id)){
+                object.id = index + 1;
+                return object
+              }
             });
-            route.store.pushMany('agents_activity', agents);
+            route.store.pushMany('agents_activity', _.compact(agents));
           });
         }
       }));
