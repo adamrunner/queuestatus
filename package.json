@@ -10,7 +10,7 @@
   "scripts": {
     "start": "brunch watch --server",
     "test": "brunch test",
-    "postinstall": "brunch build --production"
+    "postinstall": "bower install && brunch build --production"
   },
   "dependencies": {
     "body-parser": "^1.9.1",
