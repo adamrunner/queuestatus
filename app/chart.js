@@ -48,9 +48,9 @@ Chart.create = function(options){
         return y(d.key)
       })
       .attr("x", function(d){
-        return x(d.value) - 3
+        return x(d.value)
       })
-      .attr("dy", "1.65em")
+      .attr("dy", "1.35em")
       .text(function(d){ return d.value})
       svg.append("g").attr('class', 'y axis').call(yAxis);
   }
@@ -69,7 +69,7 @@ Chart.create = function(options){
       .transition()
       .duration(500)
       .attr("y", function(d){ return y(d.key)})
-      .attr("x", function(d){ return x(d.value) - 25; })
+      .attr("x", function(d){ return x(d.value) - 50; })
       .text(function(d){ return d.value});
 
   }

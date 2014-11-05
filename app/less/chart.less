@@ -1,0 +1,56 @@
+@import "custom";
+@media(min-width: 319px){
+  #chart svg {
+    transform: scale(.3) translateX(-1400px) translateY(-500px);
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px){
+  #chart svg {
+    transform: scale(.8) translateX(-11em);
+  }
+}
+g, path, line, text {
+  shape-rendering: crispEdges;
+}
+path { fill: none; }
+.y.axis {
+  path { stroke: @white;}
+  line { stroke: @white; }
+}
+
+text {
+  font-size: 2.3em;
+  fill: @white;
+  &.bar-label {
+    font-size: 3em;
+  }
+}
+
+.available {
+  fill: @available-color;
+
+  &:hover{
+    fill: lighten(@available-color, 10%);
+  }
+}
+.wrapUp {
+  fill: @wrap-up-color;
+  &:hover{
+    fill: lighten(@wrap-up-color, 10%);
+  }
+}
+.onCall {
+  text {
+    // fill:@black;
+  }
+  fill:@on-call-color;
+  &:hover{
+    fill: lighten(@on-call-color, 10%);
+  }
+}
+.notAvailable{
+  fill:@not-available-color;
+  &:hover{
+    fill: lighten(@not-available-color, 10%)
+  }
+}

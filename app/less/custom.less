@@ -1,52 +1,22 @@
-@white: rgb(250,250,250);
-@available-color: #4fa521;
-@on-call-color: #fb9d22;
-@wrap-up-color: #2484bc;
-@not-available-color: #5b5b5b;
-@black: #222222;
+@white               : rgb(250,250,250);
+@available-color     : #4fa521;
+@on-call-color       : #e68313;
+@wrap-up-color       : #2484bc;
+@not-available-color : #5b5b5b;
+@black               : #222222;
+@success-dark-color  : @available-color;
+@danger-dark-color   : #FF5050;
+@warning-dark-color  : #e7d72d;
 body {
   color:@white;
   background-color: @black;
 }
-g, path, line, text {
-  shape-rendering: crispEdges;
+.text-success-dark {
+  color:@success-dark-color;
 }
-path { fill: none; }
-.y.axis {
-  path { stroke: @white;}
-  line { stroke: @white; }
+.text-danger-dark {
+  color:@danger-dark-color;
 }
-
-text {
-  font-size: 2.3em;
-  fill: @white;
-}
-
-.available {
-  fill: @available-color;
-
-  &:hover{
-    fill: lighten(@available-color, 10%);
-  }
-}
-.wrapUp {
-  fill: @wrap-up-color;
-  &:hover{
-    fill: lighten(@wrap-up-color, 10%);
-  }
-}
-.onCall {
-  text {
-    fill:@black;
-  }
-  fill:@on-call-color;
-  &:hover{
-    fill: lighten(@on-call-color, 10%);
-  }
-}
-.notAvailable{
-  fill:@not-available-color;
-  &:hover{
-    fill: lighten(@not-available-color, 10%)
-  }
+.text-warning-dark{
+  color:@warning-dark-color;
 }

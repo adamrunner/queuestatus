@@ -1,24 +1,30 @@
 {{!-- Handlebars template for index --}}
 <div class="row call-status-row">
-  <div class="col-md-4">
-      <i class="fa fa-phone pull-left fa-5x fa-rotate-90"></i>
-      <div class="pull-left">
+  <div class="col-xs-4">
+    <span class="media-left media-middle">
+      <i class="fa fa-phone fa-rotate-90"></i>
+    </span>
+      <div class="media-body">
         <h1>Calls Waiting</h1>
-        <h1>{{current_queue_activity.calls_waiting}}</h1>
+        <h1 class="count">{{current_queue_activity.calls_waiting}}</h1>
       </div>
   </div>
-  <div class="col-md-4">
-    <i class="fa fa-clock-o pull-left fa-5x fa-rotate-90"></i>
-    <div class="pull-left">
+  <div class="col-xs-4">
+    <span class="media-left media-middle">
+      <i class="fa fa-clock-o pull-left fa-rotate-90"></i>
+    </span>
+    <div class="media-body">
       <h1>Average Wait Time</h1>
-      <h1>{{toMinutes current_queue_activity.average_wait_time}}</h1>
+      <h1 class="count">{{toMinutes current_queue_activity.average_wait_time}}</h1>
     </div>
   </div>
-  <div class="col-md-4">
-    <i class="fa fa-clock-o pull-left fa-5x"></i>
-    <div class="pull-left">
+  <div class="col-xs-4">
+    <span class="media-left media-middle">
+      <i class="fa fa-clock-o"></i>
+    </span>
+    <div class="media-body">
       <h1>Longest Wait Time</h1>
-      <h1>{{toMinutes current_queue_activity.longest_wait_time}}</h1>
+      <h1 class="count">{{toMinutes current_queue_activity.longest_wait_time}}</h1>
     </div>
   </div>
 </div>
