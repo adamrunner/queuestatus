@@ -67,7 +67,7 @@ Chart.create = function(options){
     svg.selectAll('.bar-label').data(data)
       .classed("hidden", function(d){ return d.value === 0 })
       .transition()
-      .duration(500)
+      .duration(400)
       .attr("y", function(d){ return y(d.key)})
       .attr("x", function(d){ return x(d.value) - 50; })
       .text(function(d){ return d.value});
