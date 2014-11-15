@@ -6,8 +6,8 @@ var randomQueueData = function(){
     return {
         "current_queue_activity": {
             "calls_waiting": random_number(0, 10),
-            "average_wait_time": random_number(0,1500),
-            "longest_wait_time": random_number(0,1500)
+            "average_wait_time": random_number(0,430),
+            "longest_wait_time": random_number(0,430)
         }
     }
 }
@@ -183,5 +183,7 @@ var randomAgentActivity = function(){
         "count": 12
     }
 }
+var userList = {users:[{id:795042943}, {id:826314433}, {id:826922466}, {id:840763536}, {id:840766776}, {id:840767756}, {id:840768686}, {id:840769596}, {id:840770396}, {id:856844443}]}
 module.exports.randomQueueData     = randomQueueData;
 module.exports.randomAgentActivity = randomAgentActivity;
+module.exports.userList            = userList;

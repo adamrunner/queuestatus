@@ -1,3 +1,27 @@
+<div class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        {{#link-to 'index' class="navbar-brand"}}BB Queue {{/link-to}}
+        <ul class="nav navbar-nav">
+          <li>{{#link-to 'index' }} <span class="glyphicon glyphicon-stats"></span> Status{{/link-to}}</li>
+          <li>{{#link-to 'settings'}}<span class="glyphicon glyphicon-cog"></span> Settings{{/link-to}}</li>
+          {{#if loggedIn}}
+            <li><a href="#" {{action 'logout'}}><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+          {{else}}
+            <li>{{#link-to 'login' }}<span class="glyphicon glyphicon-log-in"></span> Login{{/link-to}}</li>
+          {{/if}}
+        </ul>
+      </div>
+      <div class="navbar-right">
+      </div>
+    </div>
+</div>
 <div class="container">
   {{outlet}}
 </div>

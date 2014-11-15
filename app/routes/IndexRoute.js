@@ -14,6 +14,7 @@ App.IndexRoute = Ember.Route.extend({
     });
   },
   setupController: function(controller, model) {
+    controller.set('errorMessage', null);
     var route = this;
     controller.set('model', model);
     if (Ember.isNone(this.get('pollster'))){

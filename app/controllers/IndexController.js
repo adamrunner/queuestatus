@@ -1,5 +1,6 @@
 App.IndexController = Ember.ObjectController.extend({
   needs: 'application',
+  errorMessage: '',
   valuesArray: Ember.computed.alias('controllers.application.valuesArray'),
   available: function(){
     return this.get('store').filter('agents_activity', function(agent) {

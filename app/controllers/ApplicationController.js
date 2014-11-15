@@ -1,5 +1,10 @@
 App.ApplicationController = Ember.Controller.extend({
-  needs: 'index',
+  needs: ['index', 'login'],
+  loggedIn: false,
+  loggedInChanged: function(){
+    var breakhere;
+    this.set('loggedIn', this.get('controllers.login.token') !== undefined);
+  }.observes('controllers.login.token'),
   agentDataChanged: function(){
     this.set('valuesArray', [
       Ember.Object.create({key:'available', value: this.get('controllers.index.available.length')}),
@@ -7,5 +12,12 @@ App.ApplicationController = Ember.Controller.extend({
       Ember.Object.create({key:'onCall', value: this.get('controllers.index.onCall.length')}),
       Ember.Object.create({key:'notAvailable', value: this.get('controllers.index.notAvailable.length')})
     ])
-  }.observes('controllers.index.available.@each', 'controllers.index.wrapUp.@each', 'controllers.index.onCall.@each', 'controllers.index.notAvailable.@each')
+  }.observes('controllers.index.available.@each', 'controllers.index.wrapUp.@each', 'controllers.index.onCall.@each', 'controllers.index.notAvailable.@each'),
+  actions: {
+    logout: function(){
+      this.set('controllers.login.token', undefined);
+      delete localStorage.token
+      this.transitionTo('index');
+    }
+  }
 });

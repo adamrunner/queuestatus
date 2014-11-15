@@ -1,6 +1,6 @@
 App.Router.map(function() {
-  this.route("about");
-  this.route("favorites");
+  this.route("settings");
   this.route("index");
-  this.route("index", {path: "/"});
+  this.route("login")
+  // this.route("index", {path: "/"});
 });

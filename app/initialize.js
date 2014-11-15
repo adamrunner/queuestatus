@@ -6,7 +6,22 @@ App = Ember.Application.create({
   LOG_VIEW_LOOKUPS              : true,
   LOG_ACTIVE_GENERATION         : true
 });
-
+App.RefreshInterval = 250000
+// SimpleAuth.Configuration.authenticationRoute ="/index"
+// App.CustomAuthorizer = SimpleAuth.Authorizers.Base.extend({
+//   authorizerFactory: 'authorizer:custom'
+// });
+Ember.Application.initializer({
+  name: 'authentication',
+  after: 'simple-auth',
+  initialize: function(container, application) {
+    var session          = container.lookup('simple-auth-session:main');
+    // container.register('authenticator:custom', App.GoogleAuthenticator);
+    // container.register('authorizer:custom', App.CustomAuthorizer);
+    session.on('sessionAuthenticationSucceeded', function(){
+    })
+  }
+});
 require('store');
 require('router');
 require('chart');

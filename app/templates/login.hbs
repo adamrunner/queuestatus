@@ -1,0 +1,27 @@
+<h2>Log In</h2>
+<div class="row">
+    <div class="col-xs-6">
+
+        {{#if errorMessage}}
+            <div class="alert alert-danger">{{errorMessage}}</div>
+        {{/if}}
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form class="form-horizontal" {{action login on="submit"}}>
+
+                    <div class="input-group margin-bottom-sm">
+                        <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                        {{input value=username type="text" placeholder="Email Address" class="form-control"}}
+                    </div>
+
+                    <div class="input-group margin-bottom-sm">
+                        <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                        {{input value=password type="password" placeholder="Password" class="form-control"}}
+                    </div>
+                    {{input class="btn btn-success pull-right" type="submit" value="Log In" }}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

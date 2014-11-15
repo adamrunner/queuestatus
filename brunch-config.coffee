@@ -11,6 +11,8 @@ exports.config =
           'bower_components/jquery/dist/jquery.js'
           'bower_components/handlebars/handlebars.js'
           'bower_components/ember/ember.js'
+          'bower_components/ember-simple-auth/simple-auth.js'
+          'bower_components/ember-oauth2/dist/ember-oauth2.js'
           'bower_components/lodash/dist/lodash.js'
           'bower_components/momentjs/moment.js'
         ]
