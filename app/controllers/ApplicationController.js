@@ -1,10 +1,5 @@
 App.ApplicationController = Ember.Controller.extend({
   needs: ['index', 'login'],
-  loggedIn: false,
-  loggedInChanged: function(){
-    var breakhere;
-    this.set('loggedIn', this.get('controllers.login.token') !== undefined);
-  }.observes('controllers.login.token'),
   agentDataChanged: function(){
     this.set('valuesArray', [
       Ember.Object.create({key:'available', value: this.get('controllers.index.available.length')}),
@@ -17,7 +12,7 @@ App.ApplicationController = Ember.Controller.extend({
     logout: function(){
       this.set('controllers.login.token', undefined);
       delete localStorage.token
-      this.transitionTo('index');
+      this.transitionToRoute('index');
     }
   }
 });

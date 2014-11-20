@@ -11,7 +11,7 @@
         <ul class="nav navbar-nav">
           <li>{{#link-to 'index' }} <span class="glyphicon glyphicon-stats"></span> Status{{/link-to}}</li>
           <li>{{#link-to 'settings'}}<span class="glyphicon glyphicon-cog"></span> Settings{{/link-to}}</li>
-          {{#if loggedIn}}
+          {{#if controllers.login.token}}
             <li><a href="#" {{action 'logout'}}><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
           {{else}}
             <li>{{#link-to 'login' }}<span class="glyphicon glyphicon-log-in"></span> Login{{/link-to}}</li>
